@@ -1,2 +1,1 @@
-Chatroom website
-Features: private chat, global chat
+Online chat website
