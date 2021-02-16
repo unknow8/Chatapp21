@@ -1,1 +1,6 @@
-<p>Hello</p>
+<p>Welcome</p>
+
+<% if Current.user %>
+Logged in as: <%= Current.user.email %>
+
+<% end %>

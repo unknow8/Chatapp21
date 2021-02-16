@@ -1,18 +1,18 @@
 class SessionsController < ApplicationController
-    def omniauth
+    def create
         user = User.from_omniauth(request.env['omniauth.auth'])
         if user.valid?
             session[:user_id] = user.id
-            redirect_to room_path, notice: "Logged in sucessfully"
+            redirect_to new_room_path, notice: "Logged in sucessfully"
         else
             flash[:message] = user.errors.full_messages.join(", ")
             flash[:notice] = "Failed to login"
             render :new
         end
     end
-    private
-    def auth
-        request.env['omniauth.auth']
+
+    def index
+        @user = current_user.auth if current_user
     end
 
     def destroy 
