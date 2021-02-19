@@ -9,7 +9,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <% if Current.user %>
         <li class="nav-item">
-            Logged in as: <%= Current.user.email %>
+            <%= link_to Current.user.email, Current.user  %></a>
             <%= button_to "Logout", logout_path, method: :get, class: "btn btn-primary" %>
         </li>
       <% else %>
