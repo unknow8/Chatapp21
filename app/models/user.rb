@@ -8,4 +8,8 @@ class User < ApplicationRecord
             u.password = SecureRandom.urlsafe_base64
         end
     end
+
+    validates :username, presence: true
+
+    mount_uploader :avatar, AvatarUploader
 end
