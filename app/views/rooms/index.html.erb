@@ -7,7 +7,9 @@
         <hr>
         <% @rooms.each do |room| %>
           <%= link_to room do %>
+          <div class="card">
             <%= room.name %>
+          </div>
           <% end %>
         <% end %>
     </div>
