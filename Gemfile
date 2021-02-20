@@ -64,3 +64,4 @@ gem 'omniauth-rails_csrf_protection'
 #For avatar
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'redis'
