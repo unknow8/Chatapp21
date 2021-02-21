@@ -4,6 +4,12 @@
 
 .chat-room {
     background-color: cornsilk;
-    height: 100vh;
-    overflow-y: hidden;
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.message .content {
+    background-color: #eeeeee;
+    padding: 8px;
+    border-radius: 10px;
 }

@@ -1,3 +1,15 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.message-box {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    input[type=text] {
+        height: 45px;
+        font-size: 18px;
+        padding: 8px;
+    }
+    width: 60%;
+}
