@@ -3,7 +3,6 @@
     <div class="col-3">
         <%# <%= render 'form', room: Room.new %> 
         <%# to create new room %>
-        <p>Hello, <%= Current.user.username %></p>
         <hr>
         <% @rooms.each do |room| %>
           <%= link_to room do %>
@@ -16,18 +15,25 @@
     <div class="col-9">
       <% if @room.present? %>
         <div class="chat-room">
-          <p><%= @room.name %></p>
+          <nav class="navbar navbar-light bg-light">
+            <span class ="navbar-brand"><%= @room.name %></span> 
+            <%# should change to matching username %>
+          </nav>
+
           <% @room.messages.each do |message| %>
             <div class="message mb-3 <%= 'me' if message.user == Current.user %>">
-              <div class="username">
-                <%= message.user.username %>
-              </div>
-              <div class="content">
-                <%= message.content %>
+              <div class="message-content">
+                <div class="username">
+                  <%= message.user.username %>
+                </div>
+                <div class="content">
+                  <%= message.content %>
+                </div>
               </div>
             </div>
-          <% end %>
-          <div class="message-box">
+            <br>
+      <% end %>
+          <div class="respond-box">
             <%= render 'messages/form', message: Message.new, room: @room %>
           </div>
         </div>
