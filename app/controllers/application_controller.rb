@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
             Current.user = User.find(session[:user_id])
         end
     end
+    
+    include SessionsHelper
 end
