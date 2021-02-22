@@ -7,6 +7,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      
+      <li class="nav-item">
+        <%= button_to "Log in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
+      </li>
+
       <% if Current.user %>
         <li class="nav-item">
             Logged in as: <%= Current.user.email %>

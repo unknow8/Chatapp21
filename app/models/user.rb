@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    devise :omniauthable, :omniauth_providers => [:facebook]
+    
     has_secure_password
 
     def self.from_omniauth(response)
@@ -9,3 +11,4 @@ class User < ApplicationRecord
         end
     end
 end
+
