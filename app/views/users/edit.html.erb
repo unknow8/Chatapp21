@@ -1,36 +1,24 @@
 <div class="container-lg">
     <h1>My Account</h1>
-    <table class="table table-borderless">
-    <thead>
-    <%= form_for(@user, html: {multipart: true}) do |f| %>
-        <tr>
-        <th scope="col">Username</th>
-            <td><%= f.text_field :username, class: "form-label" %></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th scope="row">Email</th>
-        <td><%= Current.user.email %></td>
-        </tr>
-    </tbody>
-    <tbody>
-        Change avatar
-            <%= f.file_field :avatar %>
-    </tbody>
-    </table>
-        <td><%= f.submit "Update", class: "btn btn-outline-dark btn-sm" %>
-    <% end %>
-</div>
-
-
-<div class="container-xl">
-    <h1>Edit Profile</h1>
+    <br>
     <%= form_for(Current.user, html: {multipart: true}) do |f| %>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-        <br>
-        <p>Change avatar: <%= f.file_field :avatar %></p>
-        <%= f.submit "Save Change" %>
+        <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <td><%= f.text_field :username, class: "form-control" %></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">Email</th>
+            <td><%= Current.user.email %></td>
+            </tr>
+        </tbody>
+        <tbody>
+            Change avatar <%= f.file_field :avatar, class: "form-control"%>
+        </tbody>
+        </table>
+            <td><%= f.submit "Update", class: "btn btn-outline-dark btn-sm" %>
     <% end %>
 </div>

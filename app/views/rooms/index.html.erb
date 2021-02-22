@@ -6,7 +6,7 @@
         <hr>
       <% if can? :read, @room %>
         <% @rooms.each do |room| %>
-          <%= link_to room do %>
+          <%= link_to room do%>
           <div class="card">
             <%= room.name %>
           </div>

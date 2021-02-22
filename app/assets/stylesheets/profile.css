@@ -1,11 +1,7 @@
 .container-lg {
-<<<<<<< HEAD
+    width: 50%;
     margin: 0 auto;
     background-color: #f6f6f6;
-    padding: 20px;
-=======
-    background-color: white;
->>>>>>> profile
 }
 
 .avatar-image {
