@@ -1,6 +1,11 @@
 .container-lg {
-    margin: 0 auto;
-    background-color: #f4f9f9;
-    padding: 20px;
+    background-color: white;
 }
 
+.avatar-image {
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    min-width: 4rem;
+}

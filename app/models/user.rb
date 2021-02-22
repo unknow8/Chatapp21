@@ -12,4 +12,5 @@ class User < ApplicationRecord
     validates :username, presence: true
 
     mount_uploader :avatar, AvatarUploader
+    serialize :avatars, JSON
 end

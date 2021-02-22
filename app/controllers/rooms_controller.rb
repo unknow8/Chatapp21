@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
   # POST /rooms or /rooms.json
   def create
-    @room = Room.new(room_params)
+    @room = Current.user.Room.new(room_params)
 
     respond_to do |format|
       if @room.save
