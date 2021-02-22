@@ -1,12 +1,10 @@
 <div class="container-lg">
     <h1>My Account</h1>
-    <%= avatar_for(Current.user) %>
     <table class="table table-borderless">
     <thead>
         <tr>
         <th scope="col">Username</th>
         <td><%= Current.user.username %></td>
-        <td><%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-dark btn-sm" %></td>
         </tr>
     </thead>
     <tbody>
@@ -19,5 +17,7 @@
     Change avatar
     </tbody> %>
     </table>
-    <%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-dark btn-sm" %>
+    <% if can? :update, @user %>
+        <%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-dark btn-sm" %>
+    <% end %>
 </div>

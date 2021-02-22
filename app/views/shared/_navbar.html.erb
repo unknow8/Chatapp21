@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <% if logged_in? %>
+          <% if can? :read, @room %>
             <%= link_to "Daily Chat", rooms_path, class: "navbar-brand" %>
            <% end %>
         </li>

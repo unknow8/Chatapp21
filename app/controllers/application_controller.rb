@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     end
     
     include SessionsHelper
+
+    def current_ability #for cancan
+        @current_ability ||= Ability.new(Current.user)
+    end
 end

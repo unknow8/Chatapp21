@@ -19,4 +19,11 @@ class UsersController < ApplicationController
         def user_params
             params.require(:user).permit(:username, :avatar)
         end
+
+        def logged_in_user
+            unless logged_in?
+                flash[:danger] = "Please log in"
+                button_to "Logged in with Google", '/auth/:provider/callback'
+            end
+        end
 end

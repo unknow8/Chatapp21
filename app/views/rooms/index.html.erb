@@ -4,6 +4,7 @@
         <%# <%= render 'form', room: Room.new %> 
         <%# to create new room %>
         <hr>
+      <% if can? :read, @room %>
         <% @rooms.each do |room| %>
           <%= link_to room do %>
           <div class="card">
@@ -11,6 +12,7 @@
           </div>
           <% end %>
         <% end %>
+      <% end %>
     </div>
     <div class="col-9">
       <% if @room.present? %>
@@ -40,8 +42,4 @@
       <% end %>
     </div>
   </div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> profile
