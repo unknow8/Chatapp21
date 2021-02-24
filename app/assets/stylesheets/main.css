@@ -1,0 +1,35 @@
+@font-face{
+    font-family: 'DotGothic';
+    src: url('./fonts/DotGothic16-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Lobster';
+    src: url("./fonts/Lobster-Regular.ttf");
+}
+
+@font-face{
+    font-family: 'ReggaeOne';
+    src: url('./fonts/ReggaeOne-Regular.ttf');
+}
+
+#main{
+    font-size: 15vh;
+}
+
+#main_body{
+    background-color: cadetblue;
+}
+
+
+#chatapp{
+    font-family: Lobster, sans-serif;
+    font-size: 20vh;
+}
+
+#twentyone{
+    font-family: DotGothic, sans-serif;
+    color: orange;
+    font-size: 20vh;
+}
+
