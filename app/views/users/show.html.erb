@@ -20,14 +20,3 @@
     </table>
     <%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-dark btn-sm" %>
 </div>
-
-<div class="container-xl">
-    <h1>Edit Profile</h1>
-    <%= form_for(Current.user, html: {multipart: true}) do |f| %>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-        <br>
-        <p>Change avatar: <%= f.file_field :avatar %></p>
-        <%= f.submit "Save Change" %>
-    <% end %>
-</div>
