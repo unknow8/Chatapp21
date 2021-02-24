@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import "profile"
- 
- @import "rooms.scss"
- @import "messages.scss"
+ @import "profile";
+ @import "rooms.scss";
+ @import "messages.scss";
+
