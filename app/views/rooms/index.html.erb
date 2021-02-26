@@ -10,8 +10,8 @@
                 <span class='name'><%= room.name %></span>
               </div>
             </div>
+            <%= link_to 'Delete', room, method: :delete, data: { confirm: 'Are you sure you want to permanently delete this conservation?' },class: "btn btn-xs btn-dark" %>
           <% end %>
-          <%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
     </div>
     <div class="col-9">
