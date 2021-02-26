@@ -1,22 +1,26 @@
 <div class="container-lg">
-    <h1>My Account</h1>
-    <%= avatar_for(Current.user) %>
-    <table class="table table-borderless">
-    <thead>
-        <tr>
-        <th scope="col">Username</th>
-        <td><%= Current.user.username %></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th scope="row">Email</th>
-        <td><%= Current.user.email %></td>
-        </tr>
-    </tbody>
-    <%# <tbody>
-    Change avatar
-    </tbody> %>
-    </table>
-    <%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-dark btn-sm" %>
+    <div class="profile-content">
+        <h1>My Account</h1><br>
+        <div class="avatar-left">
+            <div><%= avatar_for(Current.user) %></div>
+        </div>
+        <br>
+        <div class="info-right">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                    <th scope="col">Username</th>
+                    <td><%= Current.user.username %></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">Email</th>
+                    <td><%= Current.user.email %></td>
+                    </tr>
+                </tbody>
+                </table>
+        </div>
+        <%= link_to "Edit", edit_user_path(Current.user), class: "btn btn-outline-dark btn-md" %>
+    </div>
 </div>
