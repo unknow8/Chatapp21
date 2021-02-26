@@ -18,7 +18,5 @@
     Change avatar
     </tbody> %>
     </table>
-    <% if can? :update, @user %>
-        <%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-dark btn-sm" %>
-    <% end %>
+    <%= link_to "Edit", edit_user_path(Current.user), class: "btn btn-outline-dark btn-sm" %>
 </div>
