@@ -1,21 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
   <div class="container-fluid">
-    <%= link_to "Chatapp21", root_path, class: "nav-link active" %>
-    <%# <%= link_to "Matching", new_room_path, class: "nav-link active" %> 
-    <%# fixing it so if not log in, require log in before matching > %>
-
-
+    <%= link_to "ChatApp21", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      <% if Current.user %>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            Logged in as: <%= Current.user.email %>
-            <%= button_to "Logout", logout_path, method: :get, class: "btn btn-primary" %>
+          <% if logged_in? %>
+            <%= link_to "Daily Chat", rooms_path, class: "navbar-brand" %>
+           <% end %>
         </li>
-      <% else %>
-        <li class="nav-item">
-          <%= button_to "Log in with Google", '/auth/google_oauth2', class: "btn btn-primary" %>
-        </li>
-      <% end %>
+      </ul>
+      <ul class="nav navbar-nav">
+        <% if logged_in? %>
+          <%= link_to(avatar_for(Current.user, size: 30), Current.user) %>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle me-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
+                <%= link_to "Profile", Current.user, class: "dropdown-item" %>
+            </ul>
+          </div>
+        <% else %>
+            <%= button_to "Log in with Google", '/auth/google_oauth2', class:"btn btn-primary btn-sm" %>
+        <% end %>
+      </ul>
     </div>
+  </div>
 </nav>

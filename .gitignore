@@ -27,10 +27,7 @@
 !/storage/.keep
 
 /public/assets
-<<<<<<< HEAD
 .byebug_history
-=======
->>>>>>> 640517ccbe3f7c3f0f57e25f5b2f81914f5a09ab
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
@@ -40,11 +37,6 @@
 /node_modules
 /yarn-error.log
 yarn-debug.log*
-<<<<<<< HEAD
-.yarn-integrity
-=======
 .yarn-integrity
 
-.byebug_history
 .env
->>>>>>> 640517ccbe3f7c3f0f57e25f5b2f81914f5a09ab

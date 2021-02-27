@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
             Current.user = User.find(session[:user_id])
         end
     end
+    
+    include SessionsHelper
+
+    def current_ability #for cancan
+        @current_ability ||= Ability.new(Current.user)
+    end
 end

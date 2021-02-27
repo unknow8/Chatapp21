@@ -1,0 +1,33 @@
+.container-lg {
+    margin: 30px auto;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    width: 85% !important;
+    min-height: 370px !important;
+}
+
+.avatar-image {
+    border-radius: 50%;
+}
+
+/* Profile content inside profile box */
+.profile-content {
+    padding: 40px;
+}
+
+.profile-content .form-control {
+    width: 75% !important;
+}
+
+.profile-content .avatar-left {
+    width: 40%;
+    height: auto;
+    /* background-color: #F09A9D; */
+    float:left;
+    text-align: center;
+}
+
+.profile-content .info-right {
+    float:left;
+    width: 60%;
+}
