@@ -1,0 +1,11 @@
+<div class="message mb-3 <%= 'me' if message.user == current_user %>">
+    <div class="message-content">
+        <div class="username">
+            <%= message.user.username %>
+        </div>
+        <div class="content">
+            <%= message.body %>
+        </div>
+    </div>
+</div>
+<br>

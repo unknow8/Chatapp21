@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
-  resources :rooms
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  devise_scope :user do  
+    get '/users/sign_out' => 'devise/sessions#destroy'
+ end
+
+ 
+  resources :rooms do
+    resource :room_user
+    resources :messages
+  end
+
+  root to: "landing_page#index"
 end

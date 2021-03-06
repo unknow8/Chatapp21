@@ -1,0 +1,5 @@
+<%= form_for [@room, Message.new] do |f|%>
+    <div class="form-group">
+        <%= f.text_field :body, placeholder: "Enter to send message", class: 'form-control', autofocus: true %>
+    </div>
+<% end %>
