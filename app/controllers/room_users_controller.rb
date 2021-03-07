@@ -2,7 +2,7 @@ class RoomUsersController < ApplicationController
     before_action :authenticate_user!
     before_action :set_room
 
-    def show
+    def create
         @room.room_users.where(user: current_user).first_or_create
         redirect_to @room
     end

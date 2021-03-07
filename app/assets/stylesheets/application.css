@@ -18,6 +18,5 @@
  *= require font-awesome
  */
 
- @import "~bootstrap/scss/bootstrap";
  @import "main.css";
  @import "room.css";

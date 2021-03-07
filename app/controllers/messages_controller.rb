@@ -3,10 +3,7 @@ class MessagesController < ApplicationController
     before_action :set_room
 
     def create 
-        message = @room.messages.new(message_params)
-        message.user = current_user
-        message.save
-        redirect_to @room
+        @message = @room.messages.create(message_params)
     end
 
     private
@@ -15,6 +12,6 @@ class MessagesController < ApplicationController
         end
 
         def message_params
-            params.require(:message).permit(:body)
+            params.require(:message).permit(:body).merge(user: current_user)
         end
 end

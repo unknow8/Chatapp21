@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" data-controller="room" data-room-id = <%= @room.id %>">
     <div class="col-3">
         <%= render 'form', room: Room.new %><br>
         <%# to create new room %>
@@ -9,7 +9,7 @@
               <div class="card-body">
                 <span class='name'><%= room.name %></span>
                 <% if current_user.rooms.include?(room)%>
-                  <%= button_to "Leave", room_room_user_path(room), method: :delete%>
+                  <%= link_to "Leave", room_room_user_path(room), method: :delete%>
                 <% end %>
               </div>
             </div>
@@ -18,28 +18,26 @@
     </div>
 
     <div class="col-9">
-    <% if current_user.rooms.include?(@room)%>
       <div class="chat-room">
           <nav class="navbar navbar-light bg-light">
             <span class ="navbar-brand"><%= @room.name %></span> 
             <%# should change to matching username %>
           </nav>
 
-          <div id="messages">
-            <% @room.messages.each do |message| %>
-                <%= render 'messages/message', message: message %>
-            <% end %>
-          </div>
-
-          <div class="respond-box">
-            <%= render 'messages/form', message: Message.new, room: @room %>
-          </div>
+          <% if current_user.rooms.include?(@room)%>
+            <div id="messages">
+              <% @room.messages.each do |message| %>
+                  <%= render 'messages/message', message: message %>
+              <% end %>
+            </div>
+            <div class="respond-box">
+              <%= render 'messages/form', message: Message.new, room: @room %>
+            </div>
+          <% else %>
+            <%= link_to "Join #{@room.name}", room_room_user_path(@room), method: :post %>
+          <% end %>
         </div>
-      </div>
-    <% else %>
-      <%= link_to "Join #{@room.name}", room_room_user_path(@room), method: :post %>
-    <% end %>
-  </div>
+    </div>
   </div>
 </div>
 
