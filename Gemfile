@@ -60,4 +60,4 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'dotenv-rails'
 
-gem "font-awesome-rails"
+gem 'redis'

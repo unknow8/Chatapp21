@@ -10,4 +10,9 @@ class User < ApplicationRecord
   has_many :room_users, dependent: :destroy
   has_many :rooms, through: :room_users
   has_many :messages, dependent: :destroy
+
+  def self.online 
+    ids = ActionCable.server.pubsub.redis_connection_for_subscriptions.smembers "online"
+    where(id: ids)
+  end
 end

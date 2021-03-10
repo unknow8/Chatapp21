@@ -15,5 +15,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap";
-import "@fortawesome/fontawesome-free/css/all"
 import "controllers"

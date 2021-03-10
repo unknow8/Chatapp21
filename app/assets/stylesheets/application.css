@@ -14,9 +14,6 @@
  *= require_tree .
  *= require_self
  */
- /*
- *= require font-awesome
- */
 
  @import "main.css";
  @import "room.css";

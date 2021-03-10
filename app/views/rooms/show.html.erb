@@ -15,6 +15,10 @@
             </div>
           <% end %>
         <% end %>
+
+        <ul id="online-users"> Online user
+        <%= render partial: "users/online", collection: User.online, as: :user%>
+        </ul>
     </div>
 
     <div class="col-9">
