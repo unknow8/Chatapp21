@@ -1,45 +1,51 @@
 <div class="container-fluid">
   <div class="row" data-controller="room" data-room-id = <%= @room.id %>">
-    <div class="col-3">
+    <div class="col-3 vertical-sidebar">
         <%= render 'form', room: Room.new %><br>
         <%# to create new room %>
         <% Room.all.each do |room| %>
-          <%= link_to room, class: 'room-link' do %>
+          <%= link_to room, class: "room-link" do %>
             <div class="card no-outline mb-2 room-card">
               <div class="card-body">
-                <span class='name'><%= room.name %></span>
+                <span class="name"><%= room.name %></span>
                 <% if current_user.rooms.include?(room)%>
-                  <%= link_to "Leave", room_room_user_path(room), method: :delete%>
+                  <%= link_to "Leave", room_room_user_path(room), method: :delete, class: "room-link"%>
                 <% end %>
               </div>
             </div>
           <% end %>
         <% end %>
-
-        <ul id="online-users"> Online user
-        <%= render partial: "users/online", collection: User.online, as: :user%>
-        </ul>
     </div>
 
-    <div class="col-9">
+    <div class="col-7 vertical-sidebar">
       <div class="chat-room">
-          <nav class="navbar navbar-light bg-light">
+          <nav class="navbar sticky-top navbar-light bg-light">
             <span class ="navbar-brand"><%= @room.name %></span> 
             <%# should change to matching username %>
           </nav>
-       <% if current_user.rooms.include?(@room)%>
-          <div data-target="room.messages">
-            <%= render @room.messages %>
+
+          <div id="messages">
+          <% if current_user.rooms.include?(@room)%>
+            <div data-target="room.messages">
+              <%= render @room.messages %>
+            </div>
+            <div class="respond-box">
+              <%= form_with model: [@room, Message.new], data: { action: "ajax:success->room#clearMessage" } do |form| %>
+                <%= form.text_field :body, placeholder: "Message ##{@room.name}", class: "form-control", data: { target: "room.newMessage" } %>
+              <% end %>
+            </div>
+          <% else %>
+            <%= link_to "Join #{@room.name}", room_room_user_path(@room), method: :post, class: "room-link" %>
+          <% end %>
           </div>
-    <div class="respond-box">
-        <%= form_with model: [@room, Message.new], data: { action: "ajax:success->room#clearMessage" } do |form| %>
-          <%= form.text_field :body, placeholder: "Message ##{@room.name}", class: "form-control", data: { target: "room.newMessage" } %>
-        <% end %>
+      </div>
     </div>
-      <% else %>
-        <%= link_to "Join #{@room.name}", room_room_user_path(@room), method: :post %>
-      <% end %>
-        </div>
+
+    <div class="col-2">
+      <ul id="online-users"> 
+        <p>Online user</p>
+        <%= render partial: "users/online", collection: User.online, as: :user%>
+      </ul>
     </div>
   </div>
 </div>

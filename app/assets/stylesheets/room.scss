@@ -1,15 +1,21 @@
 .container-fluid {
     width: 100% !important;
 }
+
 .chat-room {
+    background-color: #ffe6ca;
     background-color: white;
-    height: 90vh;
+    height: 92vh;
     overflow-y: scroll;
-    padding: 40px;
+
+    #messages {
+        padding-bottom: 80px;
+    }
 }
 
 .message {
-    min-height: 20px;
+    min-height: 15px;
+    height: calc(100% - 0px);
     &.me {
         .message-content {
             float: right;
@@ -58,18 +64,21 @@
             .name {
                 color: white;
             }
-            .member-count {
-                color: #e0e0e0;
-            }
         }
         .name {
             font-weight: bold;
             color: black;
             text-decoration: none !important;
         }
-        .member-count {
-            color: #777777;
-            font-weight: light;
-        }
     }
+}
+
+.respond-box {
+    position: absolute;
+    bottom: 20px;
+    width: 97%;
+}
+
+.vertical-sidebar {
+    border-right: 1px solid #eeeeee;
 }

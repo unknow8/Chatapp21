@@ -27,7 +27,6 @@ export default class extends Controller {
   }
 
   _connected() {
-    this.scrollToBottom()
   }
 
   _disconnected() {
@@ -36,7 +35,6 @@ export default class extends Controller {
   _received(data) {
     if (data.message) {
       this.messagesTarget.insertAdjacentHTML('beforeend', data.message)
-      this.scrollToBottom()
     }
   }
 }

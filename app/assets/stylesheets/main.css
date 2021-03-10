@@ -38,6 +38,9 @@
     font-size: 19vh;
 }
 
+.navbar {
+    margin-top: 0;
+}
 .navbar-brand {
     font-family: Lobster, sans-serif;
 }
