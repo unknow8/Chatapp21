@@ -24,18 +24,22 @@
             <%# should change to matching username %>
           </nav>
 
-          <% if current_user.rooms.include?(@room)%>
-            <div id="messages">
-              <% @room.messages.each do |message| %>
-                  <%= render 'messages/message', message: message %>
-              <% end %>
-            </div>
-            <div class="respond-box">
-              <%= render 'messages/form', message: Message.new, room: @room %>
-            </div>
-          <% else %>
-            <%= link_to "Join #{@room.name}", room_room_user_path(@room), method: :post %>
-          <% end %>
+          <div data-target="room.messages">
+            <%= render @room.messages %>
+          </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-9 offset-sm-2 p-2 bg-white">
+      <% if current_user.rooms.include?(@room) %>
+        <%= form_with model: [@room, Message.new], data: { action: "ajax:success->room#clearMessage" } do |form| %>
+          <%= form.text_field :body, placeholder: "Message ##{@room.name}", class: "form-control", data: { target: "room.newMessage" } %>
+        <% end %>
+
+      <% else %>
+        <%= link_to "Join #{@room.name}", room_room_user_path(@room), method: :post %>
+      <% end %>
         </div>
     </div>
   </div>

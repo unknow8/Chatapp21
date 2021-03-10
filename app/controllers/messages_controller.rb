@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
 
     def create 
         @message = @room.messages.create(message_params)
+        MessageChannel.broadcast_to @room, message: render_to_string(@message)
     end
 
     private
