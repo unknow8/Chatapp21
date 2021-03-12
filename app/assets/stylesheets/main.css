@@ -48,3 +48,12 @@
 h1 {
     text-align: center;
 }
+
+.log-in {
+    padding: 20px 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: #797979;
+}
