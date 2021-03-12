@@ -66,3 +66,5 @@ gem 'redis'
 
 #Avatar
 gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
+gem 'fog'
