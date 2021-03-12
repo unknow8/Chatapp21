@@ -19,12 +19,12 @@
 
     <div class="col-7 vertical-sidebar">
       <div class="chat-room">
-          <nav class="navbar sticky-top navbar-light bg-light">
-            <span class ="navbar-brand"><%= @room.name %></span> 
-            <%# should change to matching username %>
-          </nav>
+        <nav class="navbar sticky-top navbar-light bg-light">
+          <span class ="navbar-brand"><%= @room.name %></span> 
+          <%# should change to matching username %>
+        </nav>
 
-          <div id="messages">
+        <div id="messages">
           <% if current_user.rooms.include?(@room)%>
             <div data-target="room.messages">
               <%= render @room.messages %>
