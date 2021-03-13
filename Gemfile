@@ -60,6 +60,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'dotenv-rails'
+gem 'bootstrap'
 
 #Action Cable
 gem 'redis'
@@ -68,3 +69,6 @@ gem 'redis'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'fog'
+
+#for testing
+gem 'rexml'

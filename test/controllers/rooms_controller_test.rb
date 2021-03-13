@@ -1,8 +1,17 @@
 require "test_helper"
 
 class RoomsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    sign_in users(:regular)
     @room = rooms(:one)
+  end
+
+  test "redirected if not logged in " do 
+    sign_out :user
+    get rooms_url
+    assert_response :redirect
   end
 
   test "should get index" do
