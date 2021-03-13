@@ -62,4 +62,7 @@ Our target audience is everyone who likes connecting with others, exchanging and
 - Voice chat
 - Pairs of random users matched and challenged to have a conversation for 5 minutes
 
-
+# Testing code 
+- User sign in testing before accessing room and message page.
+- Run `bundle exec rails test:controllers` in Terminal.
+If the user is not signed in, a 'redirected if not logged in' message should appear. If all the tests pass, notice '8 runs, 3 assertions, 0 failures, 0 errors, 0 skips' in Terminal.
