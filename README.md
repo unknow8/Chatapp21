@@ -3,10 +3,12 @@
 2. From the cmd or Ubuntu subsystem cmd, execute the following commands.
 3. Clone the project: `git clone https://csil-git1.cs.surrey.sfu.ca/lht2/cmpt-276-project-chatapp21`
 4. Move in the project directory: `cd cmpt-276-project-chatapp21`
-5. Migrate the database: `rails db:migrate`
-7. Install webpacker: `rails webpacker:install`
-8. Run the server: `rails s`
-9. Access the webapp on localhost:3000
+5. Run `sudo apt install redis-server`
+6. Update bundle: `bundle install`
+7. Migrate the database: `rails db:migrate`
+8. Install webpacker: `rails webpacker:install`
+9. Run the server: `rails s`
+10. Access the webapp on localhost:3000
 
 # Demo for Iteration 1:
 - [Demo of working features for iteration 1](https://youtu.be/FAXAeFcwV_Q) 
