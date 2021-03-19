@@ -9,6 +9,9 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    @room_user = current_user.room_users.find_by(room: @room)
+    @last_read_at = @room_user&.last_read_at || @room.created_at
+    @room_user&.touch(:last_read_at)
   end
 
   # GET /rooms/new
