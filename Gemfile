@@ -72,3 +72,6 @@ gem 'fog'
 
 #for testing
 gem 'rexml'
+
+#newapi
+gem 'excon'

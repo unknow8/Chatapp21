@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :room_user
     resources :messages
   end
-
+  
+  get '/technew', to: "stories#top"
   root to: "landing_page#index"
 end
