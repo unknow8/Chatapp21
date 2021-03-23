@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   
   get '/technew', to: "stories#top"
   root to: "landing_page#index"
+
+  mount ActionCable.server => '/cable'
 end
