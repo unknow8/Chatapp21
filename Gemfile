@@ -64,7 +64,8 @@ gem 'bootstrap'
 
 #Action Cable
 gem 'redis'
-
+gem 'sidekiq'
+gem 'foreman'
 #Avatar
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
@@ -72,6 +73,5 @@ gem 'fog'
 
 #for testing
 gem 'rexml'
-
 #newapi
 gem 'excon'

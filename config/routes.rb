@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount ActionCable.server => '/cable'
+  mount Sidekiq::Web => '/sidekiq'
+
   devise_for :users
   devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'
@@ -12,6 +16,4 @@ Rails.application.routes.draw do
   
   get '/technew', to: "stories#top"
   root to: "landing_page#index"
-
-  mount ActionCable.server => '/cable'
 end

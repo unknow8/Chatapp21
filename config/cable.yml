@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:254a34a8006470577b823b3b3d886be8@scat.redistogo.com:10152/
+  url: redis://:pdae2aeb7c94a9009a407d1c327c72ce818f2f025bc902456d45fc06aa209b60d@ec2-52-5-54-55.compute-1.amazonaws.com:14779
   channel_prefix: devise_production
