@@ -5,11 +5,11 @@ class OnlineChannel < ApplicationCable::Channel
     stream_from "online:users"
 
     html = ApplicationController.render(partial: "users/online", locals: { user: current_user })
-    broadcast_to "users", { id: current_user.id, status: "online", html: html}
+    broadcast_to "users", { id: current_user.id, status: "online", html: html, avatar: current_user.avatar}
   end
 
   def unsubscribed
     ActionCable.server.pubsub.redis_connection_for_subscriptions.srem "online", current_user.id
-    broadcast_to "users", { id: current_user.id, status: "offline"}
+    broadcast_to "users", { id: current_user.id, status: "offline", avatar: current_user.avatar}
   end
 end

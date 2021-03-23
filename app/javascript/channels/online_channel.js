@@ -14,6 +14,7 @@ consumer.subscriptions.create("OnlineChannel", {
     console.log(data)
     let online = document.querySelector("#online-users")
     let el = online.querySelector(`[data-id = '${data.id}']`)
+    let ava = online.querySelector(`[avatar-id = '${data.avatar}']`)
 
     if (data.status == "online" && el == null) {
       online.insertAdjacentHTML('beforeend', data.html)
