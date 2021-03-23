@@ -41,9 +41,9 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
-  # config.action_cable.mount_path = nil
-  config.action_cable.url = 'wss://sitepoint-actioncable.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = [ 'https://dashboard.heroku.com/apps/chatappdemo21']
+  config.action_cable.mount_path = '/cable'
+  config.action_cable.url = 'wss://chatappdemo21.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://chatappdemo21.herokuapp.com', /http:\/\/chatappdemo21.herokuapp.com.*/]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
