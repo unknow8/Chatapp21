@@ -16,3 +16,4 @@
 
  @import "main.css";
  @import "room.css";
+ @import "../../../node_modules/emojionearea/emojionearea.min.css"

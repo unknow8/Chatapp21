@@ -2,12 +2,12 @@ import { Controller } from "stimulus"
 import { EmojiButton } from '@joeattardi/emoji-button';
 
 export default class extends Controller {
-  static targets = [ "button", "input" ]
+  static targets = [ "form", "input" ]
 
   connect() {
     this.picker = new EmojiButton()
     this.picker.on('emoji', emoji => {
-      this.buttonTarget.innerHTML = emoji
+      this.formTarget.innerHTML = emoji
       this.inputTarget.value = emoji
     })
   }
