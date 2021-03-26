@@ -30,8 +30,9 @@
               <%= render @room.messages %>
             </div>
             <div class="respond-box">
-              <%= form_for [@room, Message.new], data: { action: "ajax:success->room#clearMessage" }, remote: true do |form| %>
-                <%= form.text_field :body, placeholder: "Message ##{@room.name}", class: "form-control", data: { target: "room.newMessage" } %>
+              <%= form_for [@room, Message.new], data: { action: "ajax:success->room#clearMessage" }, data: { controller: "emoji-picker" }, remote: true do |form| %>
+              <button data-action="emoji-picker#toggle" data-target="emoji-picker.button"></button>
+                <%= form.text_field :emoji, placeholder: "Message ##{@room.name}", class: "form-control",data: { target: "emoji-picker.input" }, data: { target: "room.newMessage" } %>
               <% end %>
             </div>
           <% else %>
