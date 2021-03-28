@@ -56,11 +56,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Authentication
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'dotenv-rails'
 gem 'bootstrap'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 #Action Cable
 gem 'redis'
@@ -69,7 +71,6 @@ gem 'foreman'
 #Avatar
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
-gem 'fog'
 
 #for testing
 gem 'rexml'

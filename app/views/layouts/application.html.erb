@@ -49,6 +49,7 @@
               <% else %>
                   <%= button_to "Log in", new_user_session_path, class:"btn btn-success", id: "login" %>
                   <%= button_to "Sign up", new_user_registration_path, method: :get, class:"btn btn-outline-success" %>
+                  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post %>
               <% end %>
             </ul>
           </div>
