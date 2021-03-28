@@ -1,15 +1,24 @@
-<div class="container-sm">
+<div class="container-fluid" style="padding: 30px">
+<div class="row">
+<div class="col-8">
 <% @stories.each do |story| %>
   <div class="media mb-3">
     <div class="media-body">
       <h5 class="mt-0 mb-1">
-        <a class = "room-link" href="<%= story['url'] %>"><%= story['title'] %></a>
+        <a id = "new-link" href="<%= story['url'] %>"><%= story['title'] %></a>
       </h5>
+      <div id="point">
       <%= story['score'] %> points
       by <%= story['by'] %>
       <%= time_ago_in_words(story['time']) %> ago
       | <%= story['descendants'] %> comments
+      </div>
     </div>
   </div>
 <% end %>
+</div>
+<div class="col-4">
+<%= image_tag "new2.svg", style: 'height:50%;width:auto;'%>
+</div>
+</div>
 </div>

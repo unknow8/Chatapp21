@@ -16,4 +16,5 @@
 
  @import "main.css";
  @import "room.css";
- @import "../../../node_modules/emojionearea/emojionearea.min.css"
+ @import "../../../node_modules/emojionearea/emojionearea.min.css";
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');

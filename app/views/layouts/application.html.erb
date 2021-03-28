@@ -18,7 +18,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
           <%= link_to "ChatApp21", root_path, class: "navbar-brand" %>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,9 +31,9 @@
                   <%= link_to "Daily Chat", rooms_path, class: "navbar-brand" %>
                 <% end %>
               </li>
-              <%# <li class="nav-item">
-                <%= link_to "News", technew_path, class: "navbar-brand"%>
-              <%# </li> %>
+              <li class="nav-item">
+                <%= link_to "Daily News", technew_path, class: "navbar-brand"%>
+              </li>
             </ul>
             <ul class="nav navbar-nav">
               <% if user_signed_in? %>
@@ -47,8 +47,8 @@
                   </ul>
                 </div>
               <% else %>
-                  <%= button_to "Log in", new_user_session_path, class:"btn btn-primary btn-sm" %>
-                  <%= button_to "Sign Up", new_user_registration_path, method: :get, class:"btn btn-primary btn-sm" %>
+                  <%= button_to "Log in", new_user_session_path, class:"btn btn-success", id: "login" %>
+                  <%= button_to "Sign up", new_user_registration_path, method: :get, class:"btn btn-outline-success" %>
               <% end %>
             </ul>
           </div>

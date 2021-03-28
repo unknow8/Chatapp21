@@ -1,9 +1,21 @@
-<div class="landing-page">
-<div class="position-absolute top-50 start-50 translate-middle">
-    <div id = "main" class = "welcome">
-        Welcome to <br>
-        <span id = "chatapp">ChatApp</span>
-        <span id = "twentyone">21</span>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-5", id="left">
+            <div id = "main" class = "welcome">
+                <span id="welcome-to">Welcome to</span>
+                <span id = "chatapp">ChatApp</span>
+                <span id = "twentyone">21</span>
+            </div><br>
+        <div style="font-family: Nunito Sans, sans-serif;">Meet friends around the world and share your day!</div><br>
+         <% if user_signed_in? %>
+            <%= link_to "Daily Chat", rooms_path, class: "btn btn-success" %>
+        <% else %>
+            <%= button_to "Daily Chat", new_user_session_path, class:"btn btn-success", id: "login" %>
+        <% end %>
+        </div>
+        <div class ="col-5 landing-image">
+            <%= image_tag 'Travels.svg'%>
+        </div>
     </div>
 </div>
-</div>
+

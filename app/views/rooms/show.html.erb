@@ -15,36 +15,30 @@
             </div>
           <% end %>
         <% end %>
+        <%= image_tag 'explore.svg', style: 'height:20%;width:auto;'%>
     </div>
-
+    
     <div class="col-7 vertical-sidebar">
       <div class="chat-room">
         <nav class="navbar sticky-top navbar-light bg-light">
           <span class ="navbar-brand"><%= @room.name %></span> 
           <%# should change to matching username %>
         </nav>
-
         <div id="messages">
           <% if current_user.rooms.include?(@room)%>
             <div data-target="room.messages">
               <%= render @room.messages %>
             </div>
             <div class="respond-box">
-              <%= form_for [@room, Message.new], data: { action: "ajax:success->room#clearMessage" }, data: { controller: "emoji-picker" }, remote: true do |form| %>
-               <form data-action="emoji-picker#toggle" data-target="emoji-picker.form"></form>
-               <%= form.text_field :emoji, placeholder: "Message ##{@room.name}", class: "form-control", data: { target: "room.newMessage" }, data: { target: "emoji-picker.input" }, id: "emojionearea1"%>
-               <input id="mybutton" type="submit"/>
-               <script>
-                $(document).ready(function() {
-                  $("#emojionearea1").emojioneArea({
-                      autocomplete: true
-                });
-                });
-               </script>
+              <%= form_for [@room, Message.new], data: { action: "ajax:success->room#clearMessage" }, remote: true do |form| %>
+               <%= form.text_field :body, id: "emojionearea", placeholder: "Message ##{@room.name}", class: "form-control", data: { target: "room.newMessage" }%>
               <% end %>
             </div>
           <% else %>
+            <br>
             <%= link_to "Join #{@room.name}", room_room_user_path(@room), method: :post, class: "room-link" %>
+            <br>
+            <%= image_tag 'friend.svg', style: 'height:20%;width:auto;'%>
           <% end %>
           </div>
       </div>
@@ -52,10 +46,13 @@
 
     <div class="col-2">
       <ul id="online-users"> 
-        <p>Online user</p>
+          <p>Online users</p><br>
+          <%# should change to matching username %>
+        </nav>
         <%= render partial: "users/online", collection: User.online, as: :user%>
       </ul>
     </div>
   </div>
 </div>
+
 

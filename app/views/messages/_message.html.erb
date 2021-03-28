@@ -1,6 +1,6 @@
 <% if !@redbar_shown && @last_read_at && message.created_at > @last_read_at %>
     <% @redbar_shown = true %>
-    <div class="border-bottom border-danger"></div>
+    <div class="border-bottom border-danger">New message</div>
 <% end %>
 
 <div class="message mb-3 <%= 'me' if message.user == current_user %>">
