@@ -5,6 +5,7 @@
 .chat-room {
     background-color: #ffe6ca;
     background-color: white;
+    background-color:#ffffe6;
     height: 92vh;
     overflow-y: scroll;
 
@@ -86,4 +87,17 @@
 
 .vertical-sidebar {
     border-right: 1px solid #eeeeee;
+}
+
+// .messageWindow{
+//     background-color:#ffffe6;
+// }
+
+.news{
+    background-color: rgba(233, 216, 122, 0.486);
+    border-radius: 10px;
+}
+
+.newsBlock{
+    display: block;
 }

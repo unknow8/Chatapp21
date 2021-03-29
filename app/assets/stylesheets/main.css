@@ -82,6 +82,7 @@ h1 {
 
 #left {
     padding: 70px;
+    background: linear-gradient(transparent 10%, #b2dacd 40%, #b2dacd 40%, transparent 90%);
 }
 
 /* .bg-grey {

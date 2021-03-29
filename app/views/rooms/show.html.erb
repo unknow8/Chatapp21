@@ -19,7 +19,7 @@
     </div>
     
     <div class="col-7 vertical-sidebar">
-      <div class="chat-room">
+      <div class="chat-room messageWindow">
         <nav class="navbar sticky-top navbar-light bg-light">
           <span class ="navbar-brand"><%= @room.name %></span> 
           <%# should change to matching username %>
@@ -28,6 +28,7 @@
           <% if current_user.rooms.include?(@room)%>
             <div data-target="room.messages">
               <%= render @room.messages %>
+              
             </div>
             <div class="respond-box">
               <%= form_for [@room, Message.new], data: { action: "ajax:success->room#clearMessage" }, remote: true do |form| %>
