@@ -8,6 +8,7 @@
             </div><br>
         <div style="font-family: Nunito Sans, sans-serif;">Meet friends around the world and share your day!</div><br>
          <% if user_signed_in? %>
+         <div style="font-family: Nunito Sans, sans-serif;">You are logged in, access the daily chat feature now!</div>
             <%= link_to "Daily Chat", rooms_path, class: "btn btn-success" %>
         <% else %>
             <%= button_to "Daily Chat", new_user_session_path, class:"btn btn-success", id: "login" %>
