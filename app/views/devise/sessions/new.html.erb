@@ -30,6 +30,11 @@
     </div>
   <% end %>
 
+  <p style="text-align: center">or</p>
+
+  <div class="form-group" style="text-align: center">
+  <%= button_to "Log in with Google", user_google_oauth2_omniauth_authorize_path, method: :post, class:"btn btn-outline-dark"%>
+  </div>
   <%= render 'devise/shared/links' %>
   </div>
 </div>

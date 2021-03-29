@@ -74,6 +74,12 @@ h1 {
     margin-right: 10px;
 }
 
+#login-google{
+    background-color: #71A894 !important;
+    border-color:  #71A894 !important;
+    margin-right: 10px;
+}
+
 #left {
     padding: 70px;
 }
